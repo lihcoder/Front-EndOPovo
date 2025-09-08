@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubra os filmes mais populares, elenco, trailers e muito mais no PlayCube">
+  <title>PlayCube – Filmes Populares, Elenco e Trailers</title>
+
+   <!--Favicon-->
+  <link rel="icon" href="./src/img/favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="./src/img/favicon-32x32.png">
+
+<!--Scripts/Links-->
+  <script src="./src/script.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" blocking="render">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" blocking="render"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" blocking="render">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin blocking="render">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" blocking="render">
+  <link rel="stylesheet" href="src/styles.css" blocking="render">
+ 
+</head>
+<body>
+
+    <!--Elemento de carregamento da página-->
+  <div id="loading" class="spinner-border" role="status">
+    <span class="visually-hidden" style="display: none;">Carregando...</span>
+  </div>
+
+  <!--Header & Navbar-->
+  <header style="background-color: var(--color-default);">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--color-default);" role="navigation" aria-label="Menu principal">
+      <div class="container d-flex">
+        <div class="navbar-brand d-flex align-items-center col-md-6">
+          <a href="#" class="d-flex align-items-center">
+            <img src="./src/img/logoPlayCube-min_optimized.webp" alt="Logo do PlayCube" width="50">
+            <p class="mb-0 text-light fw-light">PLAY<span class="fw-bold">CUBE</span></p>
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav fw-bold" role="menubar">
+            <li class="nav-item" role="none"><a href="#" class="nav-link text-light" role="menuitem">Filmes</a></li>
+            <li class="nav-item" role="none"><a href="#" class="nav-link text-light" role="menuitem">Séries</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--Main-->
+  <main role="main">
+
+    <!--Detalhes-->
+    <section id="detalhes" class="mt-5" role="region" aria-labelledby="titulo-detalhes">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img id="poster-filme" src="" alt="Pôster do Filme" class="rounded img-fluid" style="max-width: 100%; height: auto;" loading="lazy">
+          </div>
+          <div class="col-md-8">
+            <div class="row" id="detalhes-filme"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Elenco-->
+    <section id="elenco" style="background-color: var(--secondary-color);" class="mt-5" role="region" aria-labelledby="titulo-elenco">
+      <div class="container py-4" style="height: 360px;">
+        <div class="buttonStyle">
+            <h3 class="mb-0">Elenco</h3>
+            <button type="button" class="btn-primary ms-3" aria-label="Ver mais conteúdo da seção Elenco">Ver mais</button>
+          </div>
+
+        <div id="carouselElenco" class="carousel slide" data-bs-ride="carousel" aria-label="Carrossel de elenco">
+          <div class="carousel-inner" id="elenco-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <!--Resenhas-->
+    <section id="resenhas" class="mt-5" role="region" aria-labelledby="titulo-resenhas">
+      <div class="container">
+        <div class="buttonStyle">
+          <h3 class="mb-0">Resenhas</h3>
+          <button type="button" class="btn-primary ms-3" aria-label="Ver mais conteúdo da seção Elenco">Ver mais</button>
+        </div>
+        <div id="resenhas-filme" class="d-flex gap-4 mt-3"></div>
+      </div>
+    </section>
+
+    <!--Mídia-->
+    <section id="midia" class="mt-5" role="region" aria-labelledby="titulo-midia">
+      <div class="container py-4">
+        <h2 id="titulo-midia">Mídia</h2>
+        <div class="buttonStyle">
+
+          <!--Mídia - Vídeos-->
+          <h2 class="text fw-light mb-0">Vídeos <span class="registerNum">(8)</span></h2>
+          <button class="ms-3" aria-label="Ver mais conteúdo da seção Vídeos">Ver mais</button>
+
+        </div>
+
+        <div id="carouselVideos" class="carousel slide mt-3" data-bs-ride="carousel" aria-label="Carrossel de vídeos">
+          <div class="carousel-inner" id="videos-filme">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Mídia - Posteres-->
+     <section id="poster" role="region" aria-labelledby="poster-midia">
+      <div class="container py-4">
+        <div class="buttonStyle">
+          <h2 class="text fw-light mb-0">Pôsteres <span class="registerNum">(247)</span></h2>
+          <button class="ms-3" aria-label="Ver mais conteúdo da seção Pôster">Ver mais</button>
+        </div>
+
+        <div id="carousel" class="carousel slide mt-3" data-bs-ride="carousel" aria-label="Carrossel de posteres">
+          <div class="carousel-inner" id="midia-poster">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Mídia - Imagens de Fundo-->
+    <section role="region" aria-labelledby="imagens-fundo">
+      <div class="container py-4">
+        <div class="buttonStyle">
+          <h2 class="fw-light mb-0">Imagens de Fundo <span class="registerNum">(33)</span></h2>
+          <button class="ms-3" aria-label="Ver mais conteúdo da seção Vídeos">Ver mais</button>
+        </div>
+        
+        <div id="carouselImagens" class="carousel slide" data-bs-ride="carousel" aria-label="Carrossel de imagens">
+          <div class="carousel-inner" id="imagens-fundo">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!--Recomendações-->
+    <section class="mt-3" role="region" aria-labelledby="titulo-recomendacoes" style="background-color: var(--color-default);">
+      <div class="container py-4" style="height: 540px;">
+        <div class="container buttonStyle">
+          <h2 id="titulo-posteres" class="text-light">Recomendações</h2>
+        </div>
+        <div id="carouselFilmes" class="carousel slide" data-bs-ride="carousel" aria-label="Carrossel de Recomendações">
+          <div class="carousel-inner" id="filmes">
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!--Footer-->
+
+<footer class="mt-5 p-3" role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-auto d-flex justify-content-start align-items-center">
+        <img src="./src/img/logo2PlayCube_optimized.webp" alt="Logo do PlayCube" class="img-fluid" style="width: 50px;" loading="lazy">
+        <p class="mb-0 fw-light" style="color: var(--color-default);">PLAY</p>
+        <span class="fw-bold" style="color: var(--color-default);">CUBE</span>
+      </div>
+      <div id="containerLinks" class="col d-flex justify-content-start">
+        <div class="col d-flex flex-column p-3">
+          <a href="#" style="width: fit-content;">Sobre</a>
+          <a href="#" style="width: fit-content;">Contato</a>
+          <a href="#" style="width: fit-content;">Suporte</a>
+        </div>
+        <div class="col d-flex flex-column p-3">
+          <a href="#" style="width: fit-content;">Adicione um Filme</a>
+          <a href="#" style="width: fit-content;">Adicione uma Série</a>
+          <a href="#" style="width: fit-content;">Discussões</a>
+        </div>
+        <div class="col d-flex flex-column p-3"">
+          <a href="#" style="width: fit-content;">Termos de Uso</a>
+          <a href="#" style="width: fit-content;">Política de Privacidade</a>
+          <a href="#" style="width: fit-content;">Diretrizes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</main>
+</body>
+</html>
