@@ -1,0 +1,97 @@
+:root {
+    --color-default: #102C57;
+    --primary-color: #F8F0E5;
+    --secondary-color: #EADBC8;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: League Spartan, sans-serif;
+  margin:0;
+  padding:0;
+}
+
+h1,h3,h5,h2{
+  color: var(--color-default);
+  font-weight: bold;
+}
+
+button{
+   background-color: var(--color-default);
+   color: white;
+   font-weight: lighter;
+   border-radius: 16px;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-default);
+  margin-bottom: 2px;
+}
+
+.buttonStyle{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.registerNum{
+  color: #DAC0A3;
+}
+
+@media (min-width: 375px) and (max-width: 745px){
+  #resenhas-filme{
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  #detalhes .row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  #elenco .card-body {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 375px){
+  footer .containerLinks{
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 744px){
+  #detalhes .titleFilm{
+    text-align:center;
+  }
+}
+
+@media (min-width: 375px){
+  #detalhes .titleFilm{
+    text-align: center;
+  }
+}
+
+.detalhes-filme{
+  display:block;
+}
+
+@media (min-width: 744px){
+  .detalhes-filme{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem; 
+  }
+}
+
+#detalhes-filme h5 {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+#detalhes-filme p {
+  margin-bottom: 1rem;
+}
